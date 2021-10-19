@@ -12,6 +12,10 @@ export default class AppController {
     res: express.Response
   ): Promise<any> {
     // Proccess all file paths and names
+    if (!req.files) {
+      res.json([]);
+      return;
+    }
     const files: Express.Multer.File[] = Array.isArray(req.files)
       ? req.files
       : req.files[config.uploadFieldName];
@@ -57,7 +61,7 @@ export default class AppController {
   ) {
     const thumbnailName = req.params.name;
     const fileName = thumbnailName.split('_thumbnail.jpg')[0];
-    
+
     const filepath = await AppManager.getFileByName(fileName);
     res.sendFile(filepath, () => {
       fs.rmSync(filepath);
