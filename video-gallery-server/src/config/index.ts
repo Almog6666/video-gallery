@@ -2,7 +2,7 @@ import * as env from 'env-var';
 
 const config = {
   service: {
-    port: env.get('PORT').asPortNumber() || 3001,
+    port: env.get('PORT').asPortNumber() || 8080,
   },
   minio: {
     config: {
