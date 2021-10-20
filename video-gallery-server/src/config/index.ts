@@ -2,11 +2,11 @@ import * as env from 'env-var';
 
 const config = {
   service: {
-    port: env.get('PORT').asPortNumber() || 8080,
+    port: env.get('PORT').asPortNumber() || 3001,
   },
   minio: {
     config: {
-      endPoint: env.get('MINIO_ENDPOINT').asString() || 'localhost',
+      endPoint: env.get('MINIO_ENDPOINT').asString() || 'minionginx',
       port: env.get('MINIO_PORT').asPortNumber() || 9000,
       useSSL: env.get('MINIO_USESSL').asBool() || false,
       accessKey:
