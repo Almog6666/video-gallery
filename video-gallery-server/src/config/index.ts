@@ -6,12 +6,12 @@ const config = {
   },
   minio: {
     config: {
-      endPoint: env.get('MINIO_ENDPOINT').asString() || 'minionginx',
+      endPoint: env.get('MINIO_ENDPOINT').asString() || 'localhost',
       port: env.get('MINIO_PORT').asPortNumber() || 9000,
       useSSL: env.get('MINIO_USESSL').asBool() || false,
       accessKey:
-        env.get('MINIO_ACCESSKEY').asString() || 'Q3AM3UQ867SPQQA43P2F',
-      secretKey: env.get('MINIO_SECRETKEY').asString() || 'AD7SxBzBCWBvx2E',
+        env.get('MINIO_ACCESSKEY').asString() || 'almog',
+      secretKey: env.get('MINIO_SECRETKEY').asString() || 'almog1234',
     },
     bucketName: env.get('MINIO_BUCKETNAME').asString() || 'videogallery',
   },
