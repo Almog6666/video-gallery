@@ -3,39 +3,43 @@ import * as express from 'express';
 import * as helmet from 'helmet';
 import { once } from 'events';
 import { errorMiddleware } from '../utils/error';
-import appRouter from './router'
+import appRouter from './router';
 import * as cors from 'cors';
 
 class Server {
-    private app: express.Application;
-    private http: http.Server;
-    private port: number;
+  private app: express.Application;
+  private http: http.Server;
+  private port: number;
 
-    constructor(port: number) {
-        this.app = Server.createExpressApp();
-        this.port = port;
-    }
+  constructor(port: number) {
+    this.app = Server.createExpressApp();
+    this.port = port;
+  }
 
-    static createExpressApp() {
-        const app = express();
-        app.use(cors())
-        app.use(helmet());
-        app.use(express.json({limit: '50mb'}));
-        app.use(express.urlencoded({ extended: true,limit: '2500mb' }));
+  static createExpressApp() {
+    const app = express();
+    app.use(cors());
+    app.use(helmet());
+    app.use(express.json({ limit: '50mb' }));
+    app.use(
+      express.urlencoded({
+        extended: true,
+        limit: '2500mb',
+        parameterLimit: 50000,
+      })
+    );
 
-        app.use('/api', appRouter);
+    app.use('/api', appRouter);
 
-        app.use(errorMiddleware);
+    app.use(errorMiddleware);
 
+    return app;
+  }
 
-
-        return app;
-    }
-
-    async start() {
-        this.http = this.app.listen(this.port);
-        await once(this.http, 'listening');
-    }
+  async start() {
+    this.http = this.app.listen(this.port);
+    await once(this.http, 'listening');
+  }
 }
 
 export default Server;
