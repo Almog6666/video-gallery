@@ -11,6 +11,8 @@ export default class AppController {
     req: express.Request,
     res: express.Response
   ): Promise<any> {
+    console.log('uploading multi');
+
     // Proccess all file paths and names
     if (!req.files) {
       res.json([]);
@@ -36,14 +38,17 @@ export default class AppController {
   static async listAllThumbnails(req: express.Request, res: express.Response) {
     const stream = minioClient.listObjects(config.minio.bucketName);
     let objects: any[] = [];
-
+    console.log('requested thumbnails')
     stream.on('data', (obj) => {
       objects.push(obj);
+      console.log('added obj');
     });
     stream.on('close', () => {
+      console.log(objects)
       return res.json(objects.filter((obj) => obj.name.includes('.jpg')));
     });
     stream.on('error', (err: Error) => {
+      console.log(err)
       throw err;
     });
   }
