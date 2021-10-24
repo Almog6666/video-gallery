@@ -10,8 +10,8 @@ const config = {
       port: env.get('MINIO_PORT').asPortNumber() || 9000,
       useSSL: env.get('MINIO_USESSL').asBool() || false,
       accessKey:
-        env.get('MINIO_ACCESSKEY').asString() || 'almog',
-      secretKey: env.get('MINIO_SECRETKEY').asString() || 'almog1234',
+        env.get('MINIO_ACCESSKEY').asString() || 'minio',
+      secretKey: env.get('MINIO_SECRETKEY').asString() || 'minio123',
     },
     bucketName: env.get('MINIO_BUCKETNAME').asString() || 'videogallery',
   },
