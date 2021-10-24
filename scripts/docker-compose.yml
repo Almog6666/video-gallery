@@ -23,9 +23,9 @@ services:
   minio1:
     image: 'minio/minio:latest'
     command: 'server --console-address ":9001" http://minio{1...4}/data{1...2}'
-    expose:
-      - '9000'
-      - '9001'
+    ports:
+      - '9000:9000'
+      - '9001:9001'
     environment:
       MINIO_ACCESS_KEY: almog
       MINIO_SECRET_KEY: almog1234
@@ -47,9 +47,9 @@ services:
   minio2:
     image: 'minio/minio:latest'
     command: 'server --console-address ":9001" http://minio{1...4}/data{1...2}'
-    expose:
-      - '9000'
-      - '9001'
+    ports:
+      - '9000:9000'
+      - '9001:9001'
     environment:
       MINIO_ACCESS_KEY: almog
       MINIO_SECRET_KEY: almog1234
@@ -71,9 +71,9 @@ services:
   minio3:
     image: 'minio/minio:latest'
     command: 'server --console-address ":9001" http://minio{1...4}/data{1...2}'
-    expose:
-      - '9000'
-      - '9001'
+    ports:
+      - '9000:9000'
+      - '9001:9001'
     environment:
       MINIO_ACCESS_KEY: almog
       MINIO_SECRET_KEY: almog1234
@@ -95,9 +95,9 @@ services:
   minio4:
     image: 'minio/minio:latest'
     command: 'server --console-address ":9001" http://minio{1...4}/data{1...2}'
-    expose:
-      - '9000'
-      - '9001'
+    ports:
+      - '9000:9000'
+      - '9001:9001'
     environment:
       MINIO_ACCESS_KEY: almog
       MINIO_SECRET_KEY: almog1234
