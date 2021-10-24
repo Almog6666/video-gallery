@@ -134,6 +134,8 @@ services:
     ports:
       - '9000:9000'
       - '9001:9001'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - minio1
       - minio2
