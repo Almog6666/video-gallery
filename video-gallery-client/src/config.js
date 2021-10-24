@@ -1,5 +1,5 @@
 const config = {
-  apiUri: 'server/api',
+  apiUri: '/api',
 };
 
 export default config;
