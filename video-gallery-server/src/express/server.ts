@@ -20,11 +20,11 @@ class Server {
     const app = express();
     app.use(cors());
     app.use(helmet());
-    app.use(express.json({ limit: '50mb' }));
+    app.use(express.json({ limit: '15000mb' }));
     app.use(
       express.urlencoded({
         extended: true,
-        limit: '2500mb',
+        limit: '15000mb',
         parameterLimit: 50000,
       })
     );
