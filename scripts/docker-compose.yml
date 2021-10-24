@@ -5,7 +5,9 @@ x-minio-common:
   expose:
     - '9000'
     - '9001'
-  environment:
+  environment
+      MINIO_ACCESS_KEY: KAJKUQ_TLIABIWEMKKANT0EN
+      MINIO_SECRET_KEY: pJG-t0rZV5Xo11pd8XAu7IxHQyy0wCMVacW6SiONnjUxr01w
     MINIO_ROOT_USER: minio
     MINIO_ROOT_PASSWORD: minio123
   healthcheck:
@@ -25,6 +27,8 @@ services:
       - '9000'
       - '9001'
     environment:
+      MINIO_ACCESS_KEY: KAJKUQ_TLIABIWEMKKANT0EN
+      MINIO_SECRET_KEY: pJG-t0rZV5Xo11pd8XAu7IxHQyy0wCMVacW6SiONnjUxr01w
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     healthcheck:
@@ -47,6 +51,8 @@ services:
       - '9000'
       - '9001'
     environment:
+      MINIO_ACCESS_KEY: KAJKUQ_TLIABIWEMKKANT0EN
+      MINIO_SECRET_KEY: pJG-t0rZV5Xo11pd8XAu7IxHQyy0wCMVacW6SiONnjUxr01w
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     healthcheck:
@@ -69,6 +75,8 @@ services:
       - '9000'
       - '9001'
     environment:
+      MINIO_ACCESS_KEY: KAJKUQ_TLIABIWEMKKANT0EN
+      MINIO_SECRET_KEY: pJG-t0rZV5Xo11pd8XAu7IxHQyy0wCMVacW6SiONnjUxr01w
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     healthcheck:
@@ -91,6 +99,8 @@ services:
       - '9000'
       - '9001'
     environment:
+      MINIO_ACCESS_KEY: KAJKUQ_TLIABIWEMKKANT0EN
+      MINIO_SECRET_KEY: pJG-t0rZV5Xo11pd8XAu7IxHQyy0wCMVacW6SiONnjUxr01w
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     healthcheck:
