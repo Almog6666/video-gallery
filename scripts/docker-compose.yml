@@ -27,8 +27,8 @@ services:
       - '9000'
       - '9001'
     environment:
-    MINIO_ACCESS_KEY: almog
-    MINIO_SECRET_KEY: almog1234
+      MINIO_ACCESS_KEY: almog
+      MINIO_SECRET_KEY: almog1234
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     healthcheck:
@@ -51,8 +51,8 @@ services:
       - '9000'
       - '9001'
     environment:
-    MINIO_ACCESS_KEY: almog
-    MINIO_SECRET_KEY: almog1234
+      MINIO_ACCESS_KEY: almog
+      MINIO_SECRET_KEY: almog1234
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     healthcheck:
@@ -75,8 +75,8 @@ services:
       - '9000'
       - '9001'
     environment:
-    MINIO_ACCESS_KEY: almog
-    MINIO_SECRET_KEY: almog1234
+      MINIO_ACCESS_KEY: almog
+      MINIO_SECRET_KEY: almog1234
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     healthcheck:
@@ -99,8 +99,8 @@ services:
       - '9000'
       - '9001'
     environment:
-    MINIO_ACCESS_KEY: almog
-    MINIO_SECRET_KEY: almog1234
+      MINIO_ACCESS_KEY: almog
+      MINIO_SECRET_KEY: almog1234
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio123
     healthcheck:
