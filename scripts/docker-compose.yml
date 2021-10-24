@@ -5,7 +5,7 @@ x-minio-common:
   expose:
     - '9000'
     - '9001'
-  environment
+  environment:
     MINIO_ACCESS_KEY: almog
     MINIO_SECRET_KEY: almog1234
     MINIO_ROOT_USER: minio
